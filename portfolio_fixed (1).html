@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sai Charan Mungara - Professional Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: #ffffff;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            min-height: 100vh;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        header {
+            background: #2c3e50;
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .tagline {
+            font-size: 1.2em;
+            font-weight: 400;
+            opacity: 0.95;
+            line-height: 1.4;
+        }
+
+        nav {
+            background: #34495e;
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 2px solid #2c3e50;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav li {
+            margin: 0;
+        }
+
+        nav a {
+            display: block;
+            padding: 18px 30px;
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background: #2c3e50;
+        }
+
+        main {
+            padding: 0;
+        }
+
+        section {
+            padding: 50px 40px;
+            border-bottom: 2px solid #ecf0f1;
+        }
+
+        section:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        h2 {
+            font-size: 2.2em;
+            margin-bottom: 30px;
+            color: #2c3e50;
+            text-align: center;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: #2c3e50;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1em;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        .about-content p {
+            margin-bottom: 20px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .skill-category {
+            background: white;
+            padding: 30px;
+            border: 2px solid #ecf0f1;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+
+        .skill-category h3 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.3em;
+            font-weight: bold;
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 10px;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #ecf0f1;
+            font-weight: 500;
+        }
+
+        .skill-list li:last-child {
+            border-bottom: none;
+        }
+
+        .experience-item {
+            background: white;
+            margin-bottom: 30px;
+            padding: 35px;
+            border: 2px solid #ecf0f1;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            border-bottom: 1px solid #ecf0f1;
+            padding-bottom: 15px;
+        }
+
+        .job-title {
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .company {
+            font-size: 1.1em;
+            color: #34495e;
+            font-weight: 600;
+        }
+
+        .date {
+            color: #7f8c8d;
+            font-style: italic;
+            font-weight: 500;
+        }
+
+        .responsibilities {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .responsibilities li {
+            padding: 8px 0;
+            position: relative;
+            padding-left: 25px;
+            line-height: 1.6;
+        }
+
+        .responsibilities li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #2c3e50;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        .project-subsection {
+            margin-left: 20px;
+            margin-top: 20px;
+            border-left: 3px solid #2c3e50;
+            padding-left: 20px;
+        }
+
+        .project-subsection h4 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .project-card {
+            background: white;
+            border: 2px solid #ecf0f1;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+
+        .project-image {
+            height: 120px;
+            background: #2c3e50;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2em;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .project-content {
+            padding: 30px;
+        }
+
+        .project-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .project-description {
+            color: #34495e;
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        .contact-info {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .contact-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .contact-item {
+            text-align: center;
+            padding: 30px 20px;
+            background: white;
+            border: 2px solid #ecf0f1;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+
+        .contact-icon {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            display: block;
+            color: #2c3e50;
+            font-weight: bold;
+        }
+
+        .contact-item strong {
+            color: #2c3e50;
+            font-size: 1.1em;
+        }
+
+        .contact-item a {
+            color: #34495e;
+            text-decoration: underline;
+        }
+
+        .contact-item a:hover {
+            color: #2c3e50;
+        }
+
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 40px;
+            font-size: 1em;
+        }
+
+        .scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #2c3e50;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .scroll-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-to-top:hover {
+            background: #1a252f;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 0;
+            }
+            
+            header {
+                padding: 40px 20px;
+            }
+            
+            h1 {
+                font-size: 2.2em;
+            }
+            
+            .tagline {
+                font-size: 1em;
+            }
+            
+            section {
+                padding: 40px 20px;
+            }
+            
+            nav a {
+                padding: 15px 20px;
+                font-size: 0.9em;
+            }
+            
+            .job-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .contact-methods {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Sai Charan Mungara</h1>
+            <p class="tagline">MSc Data Science & Analytics | AI/ML Researcher | Freelance Developer | Ex- Associate Software Engineer</p>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <section id="about">
+                <h2>About Me</h2>
+                <div class="about-content">
+                    <p>I am Sai Charan Mungara, a Data Science and Analytics graduate from the University of Hertfordshire with 2+ years of professional experience and active freelance practice. I specialize in deep learning, computer vision, AI system deployment, and advanced prompt engineering, with particular expertise in CNN-based architectures, OCR systems and leveraging cutting-edge LLMs for rapid development.</p>
+                    
+                    <p>My Master's research achieved 99.95% accuracy in deepfake detection using ResNet-18 architecture with real-time deployment. As a freelance developer and prompt engineering specialist, I've built advanced OCR systems and AI-powered applications for clients by expertly utilizing models like Sonnet 4.0, GPT-4, and other state-of-the-art LLMs to generate production-ready code, optimize workflows, and deliver complex technical solutions with exceptional speed and efficiency.</p>
+                    
+                    <p>I combine academic research excellence with practical industry experience and mastery of AI-assisted development, using sophisticated prompting techniques to accelerate project delivery, enhance code quality, and solve real-world challenges. My ability to communicate effectively with AI models enables me to transform complex requirements into functional systems rapidly, demonstrating both technical depth and strategic use of modern AI tools.</p>
+                </div>
+            </section>
+
+            <section id="education">
+                <h2>Education</h2>
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">MSc Data Science and Analytics</div>
+                            <div class="company">University of Hertfordshire - Masters Final Project</div>
+                        </div>
+                        <div class="date">Sep 2024 - Sep 2025</div>
+                    </div>
+                    <ul class="responsibilities">
+                        <li>Completed advanced coursework in machine learning, deep learning, and statistical analysis</li>
+                        <li>Conducted master's thesis on "Content Detection Using CNN-Based Visual for Image and Video Authentication"</li>
+                        <li>Achieved 99.95% accuracy in deepfake detection using ResNet-18 with transfer learning</li>
+                        <li>Implemented Grad-CAM visualization for transparent decision-making</li>
+                        <li>Deployed real-time detection system via Telegram bot interface for public accessibility</li>
+                        <li>Supervised by Dr. Raghubir Singh, contributing to AI ethics and digital media integrity research</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Research Project: Fortune 100 Companies Analysis</div>
+                            <div class="company">University of Hertfordshire - Team Research</div>
+                        </div>
+                        <div class="date">Nov 2024</div>
+                    </div>
+                    <ul class="responsibilities">
+                        <li>Led statistical analysis investigating relationship between company size and revenue growth using Fortune 100 dataset</li>
+                        <li>Implemented advanced data visualization techniques including scatter plots and histograms using R programming</li>
+                        <li>Applied Kendall's Tau correlation test for non-parametric statistical analysis with p-value interpretation</li>
+                        <li>Collaborated effectively in 5-member research team with comprehensive literature review and hypothesis testing</li>
+                        <li>Delivered professional research report with proper academic citations and reproducible R code analysis</li>
+                        <li>Managed version control using GitHub for collaborative research project development</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="skills">
+                <h2>Skills & Expertise</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Machine Learning & AI</h3>
+                        <ul class="skill-list">
+                            <li>Deep Learning (CNN, ResNet)</li>
+                            <li>Computer Vision & OCR</li>
+                            <li>Transfer Learning</li>
+                            <li>Explainable(Grad-CAM)</li>
+                            <li>Statistical Analysis & Research</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Development & Deployment</h3>
+                        <ul class="skill-list">
+                            <li>Python (PyTorch, Streamlit)</li>
+                            <li>R Programming & Statistical Analysis</li>
+                            <li>OpenCV & Image Processing</li>
+                            <li>Google Gemini API Integration</li>
+                            <li>Real-time AI Applications</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Research & Analytics</h3>
+                        <ul class="skill-list">
+                            <li>Academic Research & Literature Review</li>
+                            <li>Statistical Hypothesis Testing</li>
+                            <li>Data Visualization & Reporting</li>
+                            <li>Team Collaboration & Version Control</li>
+                            <li>Technical Documentation</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="experience">
+                <h2>Professional Experience</h2>
+                
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Freelance AI/ML Developer</div>
+                            <div class="company">Independent Contractor</div>
+                        </div>
+                        <div class="date">2024 - Present</div>
+                    </div>
+                    
+                    <div class="project-subsection">
+                        <h4>Healthcare Data Automation System</h4>
+                        <ul class="responsibilities">
+                            <li>Developed comprehensive healthcare data automation platform achieving 96.9% workflow efficiency improvement</li>
+                            <li>Implemented machine learning models with 87.3% accuracy in healthcare demand forecasting using Random Forest algorithms</li>
+                            <li>Created dynamic data structure detection algorithms for processing diverse Excel healthcare formats</li>
+                            <li>Integrated weather and holiday data APIs to enhance prediction capabilities and demand analysis</li>
+                            <li>Built 18+ professional visualizations across 6 strategic analytics categories</li>
+                            <li>Delivered 75% processing time reduction (from 7 hours to 15 minutes) with £70,320 annual cost savings</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-subsection">
+                        <h4>Smart Receipt Analyzer</h4>
+                        <ul class="responsibilities">
+                            <li>Built advanced OCR system using Google Gemini API for intelligent receipt data extraction</li>
+                            <li>Developed comprehensive Streamlit application with real-time image preprocessing using OpenCV</li>
+                            <li>Implemented multi-language support and automated data categorization with spending analytics</li>
+                            <li>Created export functionality supporting JSON, CSV, and Excel formats with visualization dashboards</li>
+                            <li>Delivered complete solution in one day with automated quality enhancement and error handling</li>
+                            <li>Achieved 99%+ accuracy in data extraction across multiple receipt formats and languages</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Associate Software Engineer</div>
+                            <div class="company">Hexaware Technologies</div>
+                        </div>
+                        <div class="date">Jan 2022 - Mar 2024</div>
+                    </div>
+                    <ul class="responsibilities">
+                        <li>Monitored and maintained IT service levels according to SLAs and KPIs, ensuring high service availability</li>
+                        <li>Led incident response processes and coordinated resolution efforts across multiple IT teams</li>
+                        <li>Developed Python automation scripts leveraging AI models for incident analysis and reporting</li>
+                        <li>Generated automated weekly, monthly, and yearly incident reports providing actionable insights</li>
+                        <li>Evaluated and approved IT change requests following ITIL frameworks</li>
+                        <li>Designed and implemented ITSM process improvements, optimizing workflow efficiency</li>
+                        <li>Managed service catalog and coordinated with business units to understand service requirements</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="projects">
+                <h2>Featured Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-image">
+                            CNN-Based Detection
+                        </div>
+                        <div class="project-content">
+                            <div class="project-title">Master's Thesis: Deepfake Detection System</div>
+                            <p class="project-description">
+                                Developed a comprehensive deepfake detection system achieving 99.95% accuracy using ResNet-18 with transfer learning. Implemented Grad-CAM visualization and deployed via Telegram bot for public accessibility. Processed 52,204 samples across multiple content domains.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image">
+                            Real-Time AI Interface
+                        </div>
+                        <div class="project-content">
+                            <div class="project-title">Telegram Bot AI Interface</div>
+                            <p class="project-description">
+                                Built real-time deepfake detection interface supporting multiple formats (MP4, AVI, JPEG, PNG). Integrated automated frame extraction, preprocessing pipeline, and explainable visualizations, making sophisticated AI accessible to general users.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image">
+                            Statistical Research
+                        </div>
+                        <div class="project-content">
+                            <div class="project-title">Fortune 100 Corporate Performance Analysis</div>
+                            <p class="project-description">
+                                Comprehensive statistical research analyzing relationship between company size and revenue growth using Fortune 100 dataset. Applied Kendall's Tau correlation test, created advanced visualizations with R programming, and delivered academic-quality research report with proper hypothesis testing methodology.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image">
+                            Process Automation
+                        </div>
+                        <div class="project-content">
+                            <div class="project-title">AI-Powered Service Management</div>
+                            <p class="project-description">
+                                Created Python automation scripts with AI integration for incident analysis and reporting. Reduced manual effort by 40% while generating automated weekly/monthly reports and implementing ITIL-compliant workflows.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact">
+                <h2>Contact Information</h2>
+                <div class="contact-info">
+                    <p>I am available for professional opportunities and consultations. Please feel free to contact me through any of the following methods:</p>
+                    
+                    <div class="contact-methods">
+                        <div class="contact-item">
+                            <span class="contact-icon">EMAIL</span>
+                            <div>
+                                <strong>Email</strong><br>
+                                kr720741@gmail.com
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">LINKEDIN</span>
+                            <div>
+                                <strong>LinkedIn</strong><br>
+                                <a href="https://www.linkedin.com/in/sai-charan-mungara-936041387" target="_blank">View Profile</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">PHONE</span>
+                            <div>
+                                <strong>Phone</strong><br>
+                                07823625036
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Sai Charan Mungara. All rights reserved.</p>
+        </footer>
+
+        <div class="scroll-to-top" onclick="scrollToTop()">↑</div>
+    </div>
+
+    <script>
+
+        // Smooth scrolling
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+
+        // Scroll to top
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Show/hide scroll button
+        window.addEventListener('scroll', function() {
+            const scrollButton = document.querySelector('.scroll-to-top');
+            if (window.pageYOffset > 300) {
+                scrollButton.classList.add('show');
+            } else {
+                scrollButton.classList.remove('show');
+            }
+        });
